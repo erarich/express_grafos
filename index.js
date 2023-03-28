@@ -23,8 +23,14 @@ db.sequelize.sync().then(() => {
     console.log("db has been re sync")
 })
 
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+})
+
 //routes for the user API
 app.use('/api/users', userRoutes)
+
+//routes for the note API
 app.use('/api/notes', noteRoutes)
 
 //listening to server connection
