@@ -20,6 +20,10 @@ const sequelize = new Sequelize(process.env.database_url, {dialect: "postgres"})
 //connecting to model
 db.users = require('./userModel') (sequelize, DataTypes)
 db.notes = require('./noteModel') (sequelize, DataTypes)
+db.saveNotes = require('./savedNoteModel') (sequelize, DataTypes)
+
+db.notes.hasOne(saveNotes)
+db.users.hasOne(saveNotes)
 
 //exporting the module
 module.exports = db
