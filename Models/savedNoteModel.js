@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const savedNote = sequelize.define( "saved_notes", {
+  const saved_notes = sequelize.define( "saved_notes", {
   }, {timestamps: false}, )
-  return savedNote
+  return saved_notes
 }
