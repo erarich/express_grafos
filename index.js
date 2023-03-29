@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const db = require('./Models')
 const userRoutes = require ('./Routes/userRoutes') 
 const noteRoutes = require ('./Routes/noteRoutes')
+const cors = require('cors')
 
 //setting up your port
 const PORT = process.env.PORT || 8080
@@ -15,6 +16,7 @@ const app = express()
 
 //middleware
 app.use(express.json())
+app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 
